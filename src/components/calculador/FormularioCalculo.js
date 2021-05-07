@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import Loading from '../../pages/Loading'
 
 export default class FormularioCalculo extends Component {
    constructor(){
        super()
        this.state = {
            peso: 0,
-        altura: 0
+        altura: 0,
+        loading:false
+
        }  
      /*   this.eventoClick = this.eventoClick.bind(this) */
     }
 
     render() {
         return (
+            
             <article>
                 <Form>
                 <Form.Group >
@@ -34,7 +38,7 @@ export default class FormularioCalculo extends Component {
                         this.props.guardarPesoAltura(parseFloat(this.state.peso),parseFloat( this.state.altura))}
                         >Enviar</Button>
                 </div>
-
+                <Loading visible = {this.state.loading}/>
                 </Form>
             </article>
         )
