@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import CalculadorApp from "./components/calculador/CalculadorApp";
+import Footer from "./containers/Footer";
+import { Header } from "./containers/Header";
+import Main from "./containers/Main";
+import Copyrght from "./pages/Copyrght";
+import SocialMedia from "./pages/SocialMedia";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+  
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+    <Header title= 'Calculo de Indie de Masa Corporal'/>
+    <Main>
+       <CalculadorApp />
+    </Main>
+   <Footer>
+     <SocialMedia/>
+     <Copyrght/>
+   </Footer>
+ 
+    
+    </Container>
   );
 }
 
